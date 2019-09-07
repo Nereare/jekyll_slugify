@@ -1,6 +1,6 @@
-# [{{PKG_NAME}}](https://github.com/{{PKG_REPO}}) Change Log
+# [jekyll_slugify](https://github.com/Nereare/jekyll_slugify) Change Log
 
-This is the change log to {{PKG_NAME}}. For further info on this project, see the [ReadMe file](README.md).
+This is the change log to jekyll_slugify. For further info on this project, see the [ReadMe file](README.md).
 
 All notable changes to this project will be documented in this file.
 
