@@ -87,9 +87,8 @@ module JekyllSlugify
       raise ArgumentError, msg if string.nil?
       raise ArgumentError, msg unless string.is_a? String
 
-      unless SLUGIFY_MODES.include?(mode)
-        string = cased ? string : string.downcase
-      end
+      mode = 'latin' unless SLUGIFY_MODES.include?(mode)
+      string = cased ? string : string.downcase
 
       [string, mode]
     end
