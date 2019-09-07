@@ -1,17 +1,29 @@
 # jekyll_slugify
 
+[![Gem](https://img.shields.io/gem/v/jekyll_slugify)](https://rubygems.org/gems/jekyll_slugify)
 [![License](https://img.shields.io/github/license/Nereare/jekyll_slugify.svg)](https://github.com/Nereare/jekyll_slugify)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE-OF-CONDUCT.md)
 
-Description
+[![Travis (.org)](https://img.shields.io/travis/Nereare/jekyll_slugify)]()
+[![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/Nereare/jekyll_slugify)](https://codeclimate.com/github/Nereare/jekyll_slugify)
+[![Code Climate coverage](https://img.shields.io/codeclimate/coverage/Nereare/jekyll_slugify)](https://codeclimate.com/github/Nereare/jekyll_slugify)
+[![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/Nereare/jekyll_slugify)](https://libraries.io/github/Nereare/jekyll_slugify)
+
+An extension to Ruby's `String` class that adds Jekyll-style `#slugify` method.
 
 ## Installing
 
-<!--
-TODO Set installation instructions
-BODY If there is some installation method, define it on the [README file](README.md).
--->
-1. Foo.
+1. Add `jekyll_slugify` to dependencies:
+    1. Gemfile: `gem 'jekyll_slugify', '~> VERSION'`; or
+    2. gemspec file: `spec.add_dependency 'jekyll_slugify', '~> VERSION'`;
+2. Run `bundle install` to fetch the gem from [RubyGems](https://rubygems.org/gems/jekyll_slugify);
+3. Require the gem on your code: `require 'jekyll_slugify'`
+4. Apply the `#slugify` method on a string:
+```ruby
+@foo = 'Hello Worlds!'
+puts @foo.slugify
+    => 'hello-worlds'
+```
 
 ## Contributing
 
@@ -35,4 +47,8 @@ This project uses [SemVer](http://semver.org/) for versioning. For the versions 
 
 ## Legal Stuff
 
-* [MIT License](https://opensource.org/licenses/MIT).
+[![MIT License](https://i.imgur.com/Ze3dFob.png)](LICENSE.md)
+
+This project is available under the [MIT License](https://opensource.org/licenses/MIT).
+
+The code on this project is adapted from Jekyll's `Utils#slugify` method, available under the same [MIT License](https://opensource.org/licenses/MIT).
