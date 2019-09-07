@@ -3,9 +3,9 @@
 require 'jekyll_slugify/version'
 require 'i18n'
 
-# An extension to Ruby's String class that adds Jekyll-style {#slugify} method.
+# An extension to Ruby's String class that adds Jekyll-style `slugify` method.
 module JekyllSlugify
-  # Sets the {#slugify} method to be applied on the String class.
+  # Sets the method to be applied on {String#slugify}.
   class Slugify
     # Constants for use in #slugify
     SLUGIFY_MODES = %w[raw default pretty ascii latin].freeze
@@ -64,12 +64,7 @@ module JekyllSlugify
     #
     # Returns the slugified string.
     def initialize(string, mode: nil, cased: false)
-      mode ||= 'default'
-      return nil if string.nil?
-
-      unless SLUGIFY_MODES.include?(mode)
-        return cased ? string : string.downcase
-      end
+      string, mode = check_params(string, mode, cased)
 
       string = deal_with_locales(mode, string)
       @slug = replace_character_sequence_with_hyphen(string, mode: mode)
@@ -85,6 +80,19 @@ module JekyllSlugify
     end
 
     private
+
+    def check_params(string, mode, cased)
+      mode ||= 'default'
+      msg = 'String must be a non-nil String'
+      raise ArgumentError, msg if string.nil?
+      raise ArgumentError, msg unless string.is_a? String
+
+      unless SLUGIFY_MODES.include?(mode)
+        string = cased ? string : string.downcase
+      end
+
+      [string, mode]
+    end
 
     def process_slug(slug, cased)
       # Remove leading/trailing hyphen
