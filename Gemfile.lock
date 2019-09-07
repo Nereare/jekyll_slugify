@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    jekyll_slugify (0.1.0)
+    jekyll_slugify (0.2.0)
       i18n (~> 1.6.0)
 
 GEM

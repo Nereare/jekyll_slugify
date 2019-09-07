@@ -14,6 +14,9 @@ module JekyllSlugify
     SLUGIFY_PRETTY_REGEXP = Regexp.new("[^[:alnum:]._~!$&'()+,;=@]+").freeze
     SLUGIFY_ASCII_REGEXP = Regexp.new('[^[A-Za-z0-9]]+').freeze
 
+    # The slugified string
+    attr_reader :slug
+
     # Slugify a filename or title.
     #
     # string - the filename or title to slugify
@@ -60,7 +63,7 @@ module JekyllSlugify
     #   # => "the-config-yml-file"
     #
     # Returns the slugified string.
-    def slugify(string, mode: nil, cased: false)
+    def initialize(string, mode: nil, cased: false)
       mode ||= 'default'
       return nil if string.nil?
 
@@ -69,11 +72,16 @@ module JekyllSlugify
       end
 
       string = deal_with_locales(mode, string)
-      slug = replace_character_sequence_with_hyphen(string, mode: mode)
-      slug = process_slug(slug, cased)
-      slug_empty?(slug)
+      @slug = replace_character_sequence_with_hyphen(string, mode: mode)
+      @slug = process_slug(@slug, cased)
+      slug_empty?(@slug)
+    end
 
-      slug
+    # Returns the slugified string.
+    #
+    # @return [String] The slugified string.
+    def to_s
+      @slug
     end
 
     private
@@ -87,12 +95,8 @@ module JekyllSlugify
     end
 
     def slug_empty?(slug)
-      return unless slug.empty?
-
-      Jekyll.logger.warn(
-        'Warning:',
-        "Empty `slug` generated for '#{string}'."
-      )
+      msg = 'Empty `slug` generated for given String'
+      raise msg if slug.empty?
     end
 
     def deal_with_locales(mode, string)
@@ -101,10 +105,9 @@ module JekyllSlugify
         if I18n.config.available_locales.empty?
           I18n.config.available_locales = :en
         end
-        I18n.transliterate(string)
-      else
-        string
+        string = I18n.transliterate(string)
       end
+      string
     end
 
     def replace_character_sequence_with_hyphen(string, mode: 'default')
