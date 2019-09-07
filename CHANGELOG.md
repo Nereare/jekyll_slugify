@@ -39,3 +39,4 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
 * Changelog file.
 * Requires [I18n](https://rubygems.org/gems/i18n) gem.
 * Adds main module (`JekyllSlugify`).
+* Adds `#slugify` method to the native `String` class.
