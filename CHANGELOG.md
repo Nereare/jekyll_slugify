@@ -26,6 +26,8 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
 
 ## [Unreleased]
 
+## [0.4.2] - `2019-09-07`
+
 ### Added
 * Code of Conduct from [Contributor Covenant v1.4.1](https://www.contributor-covenant.org/).
 * [License](LICENSE.md).
@@ -40,3 +42,6 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
 * Requires [I18n](https://rubygems.org/gems/i18n) gem.
 * Adds main module (`JekyllSlugify`).
 * Adds `#slugify` method to the native `String` class.
+
+[Unreleased]: https://github.com/Nereare/Grimoire/compare/v0.4.2...HEAD
+[0.4.2]: https://github.com/Nereare/Grimoire/releases/tag/v0.4.2
