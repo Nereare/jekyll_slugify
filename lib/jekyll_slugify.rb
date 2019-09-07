@@ -2,16 +2,21 @@
 
 require 'jekyll_slugify/version'
 require 'i18n'
+require 'string'
 
 # An extension to Ruby's String class that adds Jekyll-style `slugify` method.
 module JekyllSlugify
   # Sets the method to be applied on {String#slugify}.
   class Slugify
-    # Constants for use in #slugify
+    # Constants for use in {#initialize}'s mode parameter.
     SLUGIFY_MODES = %w[raw default pretty ascii latin].freeze
+    # The _raw_ mode of slugifying a string.
     SLUGIFY_RAW_REGEXP = Regexp.new('\\s+').freeze
+    # The _default_ mode of slugifying a string.
     SLUGIFY_DEFAULT_REGEXP = Regexp.new('[^[:alnum:]]+').freeze
+    # The _pretty_ mode of slugifying a string.
     SLUGIFY_PRETTY_REGEXP = Regexp.new("[^[:alnum:]._~!$&'()+,;=@]+").freeze
+    # The _ascii_ mode of slugifying a string.
     SLUGIFY_ASCII_REGEXP = Regexp.new('[^[A-Za-z0-9]]+').freeze
 
     # The slugified string
