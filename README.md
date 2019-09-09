@@ -22,7 +22,17 @@ An extension to Ruby's `String` class that adds Jekyll-style `#slugify` method.
 ```ruby
 @foo = 'Hello Worlds!'
 puts @foo.slugify
-    => 'hello-worlds'
+    => hello-worlds
+```
+
+Do note, however, that the `slugify` method will not work on ideograms - an ideogram-only word will actually raise an error!
+
+```ruby
+puts 'Ærøskøbing'.slugify # Works
+    => aeroskobing
+
+puts '指事字'.slugify # Raises a Runtime error
+    => Empty `slug` generated for given String (RuntimeError)
 ```
 
 ## Contributing
