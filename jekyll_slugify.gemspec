@@ -38,5 +38,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'simplecov', '~> 0.17.0'
   spec.add_development_dependency 'yard', '~> 0.9.20'
 
-  spec.add_dependency 'i18n', '~> 1.6.0'
+  spec.add_dependency 'i18n', '>= 1.6', '< 1.8'
 end
