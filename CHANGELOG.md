@@ -26,6 +26,11 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
 
 ## [Unreleased]
 
+## [0.4.3] - `2019-10-02`
+
+### Changed
+* Bump `i18n` version and update its version requirement.
+
 ## [0.4.2] - `2019-09-07`
 
 ### Added
@@ -43,5 +48,6 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
 * Adds main module (`JekyllSlugify`).
 * Adds `#slugify` method to the native `String` class.
 
-[Unreleased]: https://github.com/Nereare/Grimoire/compare/v0.4.2...HEAD
+[Unreleased]: https://github.com/Nereare/Grimoire/compare/v0.4.3...HEAD
+[0.4.3]: https://github.com/Nereare/Grimoire/compare/v0.4.2...v0.4.3
 [0.4.2]: https://github.com/Nereare/Grimoire/releases/tag/v0.4.2

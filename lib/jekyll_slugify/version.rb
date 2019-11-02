@@ -3,7 +3,7 @@
 # An extension to Ruby's String class that adds Jekyll-style `slugify` method.
 module JekyllSlugify
   # Sets the current version of the gem
-  @version = '0.4.2'
+  @version = '0.4.3'
 
   # Returns the Gem's current version.
   #
