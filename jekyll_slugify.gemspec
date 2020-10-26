@@ -35,7 +35,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rspec', '~> 3.8'
   spec.add_development_dependency 'rubocop', '~> 0.82.0'
-  spec.add_development_dependency 'simplecov', '~> 0.18.5'
+  spec.add_development_dependency 'simplecov', '~> 0.19.1'
   spec.add_development_dependency 'yard', '~> 0.9.20'
 
   spec.add_dependency 'i18n', '>= 1.6', '< 2'
